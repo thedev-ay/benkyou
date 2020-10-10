@@ -12,8 +12,8 @@ const CACHE_KEY_PHOTO = 'photo_data';
 })
 export class AppComponent implements OnInit {
   today = new Date().toDateString();
-  viewHeight = window.screen.height;
-  viewWidth = window.screen.width;
+  hImg = window.screen.height - (window.screen.height * .20);
+  wImg = window.screen.width - (window.screen.width * .20);
 
   photo: Record<string, any> = {};  
   japaneseWord: string;
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
   requestPhoto() {
     this.appService.getRandomPhoto().subscribe((result: any) => {
       this.photo = {
-        url: result.photo.urls.full.concat(`&h=${this.viewHeight}&w=${this.viewWidth}`),
+        url: result.photo.urls.full.concat(`&h=${this.hImg}&w=${this.wImg}`),
         title: result.photo.location.title,
         owner: result.photo.user.name,
         ownerURL: result.photo.user.links.html,
