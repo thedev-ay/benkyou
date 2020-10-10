@@ -3,7 +3,7 @@ import ghostWriter from 'ghost-writer';
 import { AppService } from './app.service';
 import { ChromeService } from './service/chrome.service';
 
-export const CACHE_KEY_PHOTO = 'photo_data';
+const CACHE_KEY_PHOTO = 'photo_data';
 
 @Component({
   selector: 'app-root',
