@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
         cachedDate: this.today,
       };
 
-      this.chromeService.set({ CACHE_KEY_PHOTO: this.photo });
+      this.chromeService.set({ [CACHE_KEY_PHOTO]: this.photo });
     });
   }
 
