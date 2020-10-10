@@ -1,0 +1,24 @@
+<div class="container" [ngStyle]="photo.url && {'background': 'url(' + photo.url + ') no-repeat center center/cover'}">
+  <div class="flag"></div>
+
+  <div class="mid-row-container">
+    <div class="word-container">
+      <span id="japanese-word">{{ japaneseWord }}</span>
+    </div>
+
+    <div class="choices-container" *ngIf="!englishWord">
+      <a *ngFor="let choice of choices">
+        <button [ngClass]="isPhotoLoaded()" data-choice="{{ choice }}" (click)="check($event)">{{ choice }}</button>
+      </a>
+    </div>
+
+    <div class="translation-container" *ngIf="englishWord">
+      <span id="englishWord" [ngClass]="isPhotoLoaded()">{{ englishWord }}</span>
+    </div>
+  </div>
+
+  <div class="credits" *ngIf="photo.url">
+    <span>{{ photo.title }}</span>
+    <a [href]="photo.ownerURL" target="_blank">{{ photo.owner }} | Unsplash</a>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+.default {
+    color: #607d8b !important;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    height: 100vh;
+    background-color: honeydew;
+}
+
+.mid-row-container {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.word-container #japanese-word {
+    color:#eee;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 5vw;
+    font-weight: 700;
+    text-shadow: 2px 2px #607d8b;
+}
+
+.choices-container {
+    margin: 20px;
+}
+
+.choices-container button {
+    font-weight: 400;
+    padding: 10px 20px 10px 20px;
+    margin: 7px;
+    font-size: 1vw;
+    color: #fff;
+
+    border: 1px solid #607d8b;
+    border-radius: 30px;
+
+    -webkit-transition: background-color 0.2s ease-out 0s;
+    -moz-transition: background-color 0.2s ease-out 0s;
+    -o-transition: background-color 0.2s ease-out 0s;
+    transition: background-color 0.2s ease-out 0s;
+
+    background-color: #ffffff21;
+    outline: none;
+
+    user-select: none;
+    text-shadow: 2px 2px rgba(255,255,255,0.1);
+}
+
+.choices-container button.incorrect {
+    color: #ffffff !important;
+    background-color: #f44336 !important;
+    border: 1px solid #f44336;
+}
+    
+div.choices-container button:hover {
+    color: #ffffff;
+    background-color: #5eba7d;
+    cursor: pointer;
+}
+
+.translation-container #englishWord {
+    color: #ffffff;
+    font-size: 2vw;
+    font-weight: 400;
+    text-shadow: 2px 2px rgba(255,255,255,0.1);
+}
+
+.flag {
+    position: absolute;
+    bottom: 1vw;
+    right: 2vw;
+    height: 2vw;
+    width: 3vw;
+    background-image: url('/assets/japan.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px #aaaaaa solid;
+}
+
+.credits {
+    position: absolute;
+    height: 2rem;
+    bottom: 1.5vw;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.credits a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.7;
+}
+
+.credits a:hover {
+    opacity: 0.9;
+}
